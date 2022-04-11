@@ -8,19 +8,20 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class PostgreSQLDatabase {
-  private Connection conn;
+  private static Connection conn;
 
   private PostgreSQLDatabase() {
   };
 
-  public Connection getConnection() throws SQLException {
+  public static Connection getConnection() throws SQLException {
     if (conn == null) {
       connect();
+      System.out.println("Fail to connect to database.");
     }
     return conn;
   }
 
-  private void connect() throws SQLException {
+  private static void connect() throws SQLException {
     // get username password postgreSql string from application.properties file
     Properties props = new Properties();
     ClassLoader loader = Thread.currentThread().getContextClassLoader();
