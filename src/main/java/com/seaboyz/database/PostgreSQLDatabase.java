@@ -16,7 +16,6 @@ public class PostgreSQLDatabase {
   public static Connection getConnection() throws SQLException {
     if (conn == null) {
       connect();
-      System.out.println("Fail to connect to database.");
     }
     return conn;
   }
@@ -45,6 +44,6 @@ public class PostgreSQLDatabase {
 
     // establish connection
     conn = DriverManager.getConnection(url, username, password);
-    System.out.println("Connected to PostgresSQL server");
+    System.out.println("Connected to PostgreSQL server.");
   }
 }

@@ -13,6 +13,7 @@ public class App {
             System.out.println("Disconnected from database");
         } catch (SQLException e) {
             System.out.println("Fail connecting to database");
+            e.printStackTrace();
         }
     }
 }
